@@ -20,6 +20,9 @@
 # end
 target :app do
   signature "sig"
-  check "models/*.rb"
-  check "controllers/api/v1/*/rb"
+  check "app"
+  
+  library 'pathname'
+  library 'logger'
+  library 'mutex_m'
 end
