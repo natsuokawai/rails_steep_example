@@ -56,19 +56,31 @@ class User < ApplicationRecord
   def restore_updated_at!: () -> void
   def clear_updated_at_change: () -> void
 
+  attr_accessor admin (): (TrueClass | FalseClass)?
+  def admin_changed?: () -> bool
+  def admin_change: () -> [(TrueClass | FalseClass)?, (TrueClass | FalseClass)?]
+  def admin_will_change!: () -> void
+  def admin_was: () -> (TrueClass | FalseClass)?
+  def admin_previously_changed?: () -> bool
+  def admin_previous_change: () -> Array[(TrueClass | FalseClass)?]?
+  def admin_previously_was: () -> (TrueClass | FalseClass)?
+  def restore_admin!: () -> void
+  def clear_admin_change: () -> void
+  attr_accessor admin? (): TrueClass | FalseClass
+
+  def books: () -> Book::ActiveRecord_Associations_CollectionProxy
 
 
 
 
-
-
+  def self.admin: () -> User::ActiveRecord_Relation
 end
 
 class User::ActiveRecord_Relation < ActiveRecord::Relation
   include _ActiveRecord_Relation[User]
   include Enumerable[User, self]
 
-
+  def admin: () -> User::ActiveRecord_Relation
 end
 
 class User::ActiveRecord_Associations_CollectionProxy < ActiveRecord::Associations::CollectionProxy
