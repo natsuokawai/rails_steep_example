@@ -9803,6 +9803,9 @@ module ActiveRecord
   end
 end
 
+class PG
+end
+
 class ::PG::Connection
 end
 
