@@ -1,24 +1,16 @@
-# README
+Rails with RBS and Steep.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Generate RBS files
+You can generate RBS files using [rbs_rails](https://github.com/pocke/rbs_rails).
 
-Things you may want to cover:
+Rails:
+```
+$ bundle exec rake copy_signature_files
+```
 
-* Ruby version
+Model classes:
+```
+$ bundle exec rake generate_rbs_for_model
+```
 
-* System dependencies
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
